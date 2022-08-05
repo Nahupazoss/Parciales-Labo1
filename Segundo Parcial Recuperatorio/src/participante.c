@@ -275,3 +275,59 @@ int participante_filterDificultad(void* pElemento)
 
 	return retorno;
 }
+/***************************************************************************************/
+int participante_filterDificultad2(void* pElemento)
+{
+	int retorno = -1;
+	eParticipante* unParticipante = NULL;
+	int dificultad;
+
+	if(pElemento != NULL)
+	{
+		unParticipante = (eParticipante*)pElemento;
+
+		if(unParticipante != NULL)
+		{
+			participante_getIdDificultad(unParticipante, &dificultad);
+
+			if(dificultad == 2)
+			{
+				retorno = 1;
+			}
+			else
+			{
+				retorno = 2;
+			}
+		}
+	}
+
+	return retorno;
+}
+/***************************************************************************************/
+int participante_filterDificultad3(void* pElemento)
+{
+	int retorno = -1;
+	eParticipante* unParticipante = NULL;
+	int dificultad;
+
+	if(pElemento != NULL)
+	{
+		unParticipante = (eParticipante*)pElemento;
+
+		if(unParticipante != NULL)
+		{
+			participante_getIdDificultad(unParticipante, &dificultad);
+
+			if(dificultad == 3)
+			{
+				retorno = 1;
+			}
+			else
+			{
+				retorno = 2;
+			}
+		}
+	}
+
+	return retorno;
+}

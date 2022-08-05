@@ -119,17 +119,32 @@ int controller_sort(LinkedList* pArrayListParticipante)
     return retorno;
 }
 /******************************************************************************************************/
-int controller_filter(LinkedList* pArrayListparticipante)
+/*int controller_filter(LinkedList* pArrayListparticipante)
 {
 	int retorno = -1;
-	LinkedList* nuevall = NULL;
+	int opcion;
 
 	if(pArrayListparticipante != NULL)
 	{
-		nuevall = ll_filter(pArrayListparticipante,participante_filterDificultad);
-		controller_List(nuevall);
-		controller_saveAsText("src/filtrado.csv", nuevall);
+		do
+		{
+			printf("12312312");
+			scanf("%d",&opcion);
+			switch(opcion)
+			{
+			case 1:
+				ll_filter(pArrayListparticipante, participante_filterDificultad);
+			break;
+			case 2:
+				ll_filter(pArrayListparticipante, participante_filterDificultad2);
+			break;
+			case 3:
+				ll_filter(pArrayListparticipante, participante_filterDificultad3);
+			break;
+			}
+
+		}while(opcion != 3);
 	}
 
 	return retorno;
-}
+}*/

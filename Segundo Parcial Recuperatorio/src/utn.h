@@ -19,6 +19,7 @@ int getInt(int* pResultado);
 int esFlotante(char* cadena);
 int getFloat(float* pResultado);
 int getString(char* cadena, int longitud);
+int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
 int esNombre(char* cadena,int longitud);
 int getNombre(char* pResultado,int longitud);
 int esDescripcion(char* cadena,int longitud);

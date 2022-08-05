@@ -498,8 +498,9 @@ int menu()
 	opcion = pedirEntero("\n1-Cargar archivo"
 			"\n2-Ordenar lista de manera descendente"
 			"\n3-Mostrar lista"
-			"\n4-Filtrar lista segun dificultad y guardar"
-			"\n5-Salir"
+			"\n4-Filtrar lista segun dificultad"
+			"\n5-Guardar en filtrado.csv"
+			"\n6-Salir"
 			"\nOPCION:", "Error solo se permite el ingreso de numeros,reitente");
 	  printf("===================================================================================================\n");
 

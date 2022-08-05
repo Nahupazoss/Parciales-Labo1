@@ -49,6 +49,8 @@ int participante_getEdad(eParticipante* this,int* edad);
 int participante_OrdenaNombre(void* pParticipanteUno , void* pParticipanteDos);
 /***********************************************/
 int participante_filterDificultad(void* pElemento);
+int participante_filterDificultad2(void* pElemento);
+int participante_filterDificultad3(void* pElemento);
 /************************************************/
 
 
