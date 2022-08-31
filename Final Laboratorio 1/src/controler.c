@@ -96,7 +96,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListPokemon)
 	return retorno;
 }
 /******************************************************************************************************/
-int controller_sort(LinkedList* pArrayListParticipante)
+/*int controller_sort(LinkedList* pArrayListParticipante)
 {
 	int retorno = -1;
 	int flag = 0;
@@ -117,7 +117,7 @@ int controller_sort(LinkedList* pArrayListParticipante)
 		printf("\nERROR\n");
 	}
     return retorno;
-}
+}*/
 /******************************************************************************************************/
 int controller_map(LinkedList* pArrayList)
 {
@@ -126,6 +126,7 @@ int controller_map(LinkedList* pArrayList)
 	if(pArrayList != NULL)
 	{
 		ll_map(pArrayList,pokemon_valorDelAtaque);
+		retorno = 0;
 	}
 
 	return retorno;

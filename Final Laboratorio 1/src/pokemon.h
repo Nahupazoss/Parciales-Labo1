@@ -60,10 +60,13 @@ int participante_getEdad(ePokemon* this,int* edad);
 int participante_OrdenaNombre(void* pParticipanteUno , void* pParticipanteDos);
 /***********************************************/
 int pokemon_filterWater(void* pElemento);
-
+/***********************************************/
 int pokemon_valorDelAtaque(void* pElemento);
+/***********************************************/
 int pokemon_batallaWater(void* pElemetno);
 int pokemon_batallaFire(void* pElemetno);
+/***********************************************/
+int pokemon_Batalla(LinkedList* pArrayListPokemon);
 /************************************************/
 
 

@@ -504,7 +504,7 @@ int menu()
 			"\n3-Mostrar lista"
 			"\n4-Filtrar lista segun tipo Agua variocolor"
 			"\n5-Aumento del valor de poder a pokemones Fire Ground y Grass"
-			"\n6-Batalla Pokemon"
+			"\n6-Batalla Pokemon VS Jefe del Team Rocket "
 			"\n7-Salir"
 			"\nOPCION:", "Error solo se permite el ingreso de numeros,reitente");
 	  printf("===================================================================================================\n");

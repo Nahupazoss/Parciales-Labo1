@@ -216,7 +216,7 @@ int pokemon_setEsVarioColor(ePokemon* this,int esVarioColor)
 		if(this != NULL)
 		{
 			retorno = 0;
-			this->valorAtaque = esVarioColor;
+			this->esVarioColor = esVarioColor;
 		}
 
 		return retorno;
@@ -348,10 +348,12 @@ int pokemon_valorDelAtaque(void* pElemento)
 		{
 			pokemon_getTipo(pokemonUno, tipo1);
 
-			if(strcmp(tipo1,fire) == 0)
+			if(strcmp(tipo1,fire) == 0 )
 			{
 				pokemon_getValorAtaque(pokemonUno, &valorAtaque);
 				valorAtaque = valorAtaque * 1.10;
+				pokemon_setValorAtaque(pokemonUno, valorAtaque);
+				retorno = 1;
 			}
 			else
 			{
@@ -359,6 +361,8 @@ int pokemon_valorDelAtaque(void* pElemento)
 				{
 					pokemon_getValorAtaque(pokemonUno, &valorAtaque);
 					valorAtaque = valorAtaque * 1.10;
+					pokemon_setValorAtaque(pokemonUno, valorAtaque);
+					retorno = 1;
 				}
 				else
 				{
@@ -366,17 +370,18 @@ int pokemon_valorDelAtaque(void* pElemento)
 					{
 						pokemon_getValorAtaque(pokemonUno, &valorAtaque);
 						valorAtaque = valorAtaque * 1.10;
+						pokemon_setValorAtaque(pokemonUno, valorAtaque);
+						retorno = 1;
 					}
 				}
 			}
-
-
 		}
 	}
+
 	return retorno;
 }
 /***************************************************************************************/
-int pokemon_batallaFire(void* pElemetno)
+/*int pokemon_batallaFire(void* pElemetno)
 {
 	int retorno = -1;
 
@@ -409,9 +414,9 @@ int pokemon_batallaFire(void* pElemetno)
 		}
 	}
 	return retorno;
-}
+}*/
 /***************************************************************************************/
-int pokemon_batallaWater(void* pElemetno)
+/*int pokemon_batallaWater(void* pElemetno)
 {
 	int retorno = -1;
 
@@ -444,5 +449,60 @@ int pokemon_batallaWater(void* pElemetno)
 		}
 	}
 	return retorno;
-}
+}*/
 /***************************************************************************************/
+int pokemon_Batalla(LinkedList* pArrayListPokemon)
+{
+	int retorno = -1;
+	ePokemon* unPokemon = NULL;
+	int i;
+	int tam = ll_len(pArrayListPokemon);
+	char tipo[50];
+	char tamanio[50];
+	char ataqueCargado[50];
+	int valorAtaque;
+	int contador = 0;
+
+	if(pArrayListPokemon != NULL)
+	{
+		for(i=0;i<tam;i++)
+		{
+			unPokemon = (ePokemon*)ll_get(pArrayListPokemon,i);
+
+			if(unPokemon != NULL)
+			{
+				pokemon_getTipo(unPokemon,tipo);
+				pokemon_getTamanio(unPokemon,tamanio);
+				pokemon_getAtaqueCargado(unPokemon,ataqueCargado);
+				pokemon_getValorAtaque(unPokemon,&valorAtaque);
+
+				if(strcmp(tipo,"Fire") == 0 && strcmp(tamanio,"XL") == 0 && strcmp(ataqueCargado,"Lanzallamas") == 0 && valorAtaque > 80)
+				{
+					contador++;
+				}
+				else
+				{
+					if(strcmp(tipo,"Water") == 0 && strcmp(tamanio,"L") == 0 && strcmp(ataqueCargado,"Hidrobomba") == 0 && valorAtaque > 80)
+					{
+						contador++;
+					}
+				}
+			}
+		}
+
+		if(contador >= 3)
+		{
+			printf("Has ganado la batalla!!");
+			printf("\nTienes %d pokemones que le pueden ganar!!!",contador);
+		}
+		else
+		{
+			printf("Has perdido la batalla :c");
+			printf("\nTienes %d pokemones es imposible ganarle!!!",contador);
+		}
+
+		retorno = 1;
+	}
+
+	return retorno;
+}
