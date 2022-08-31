@@ -244,6 +244,7 @@ void pokemon_mostrar(ePokemon* unPokemon)
 	char ataqueCargado[50];
 	int valorAtaque;
 	int esVarioColor;
+	char ColorPkm[50];
 
 	if(unPokemon != NULL)
 	{
@@ -254,8 +255,9 @@ void pokemon_mostrar(ePokemon* unPokemon)
 		pokemon_getAtaqueCargado(unPokemon, ataqueCargado);
 		pokemon_getValorAtaque(unPokemon, &valorAtaque);
 		pokemon_getEsVarioColor(unPokemon, &esVarioColor);
+		pokemon_tipoColor(esVarioColor, ColorPkm);
 
-		printf("%-5d\t%-20s\t%-15s\t%-15s\t%-15s\t%-10d\t%-10d\n",numero,nombre,tipo,tamanio,ataqueCargado,valorAtaque,esVarioColor);
+		printf("%-5d\t%-20s\t%-15s\t%-15s\t%-15s\t%-10d\t%-10s\n",numero,nombre,tipo,tamanio,ataqueCargado,valorAtaque,ColorPkm);
 	}
 
 }
@@ -306,6 +308,7 @@ int pokemon_filterWater(void* pElemento)
 	ePokemon* unPokemon = NULL;
 	char tipo[50];
 	char water[50] = "Water";
+	int esVarioColor;
 
 	if(pElemento != NULL)
 	{
@@ -314,8 +317,9 @@ int pokemon_filterWater(void* pElemento)
 		if(unPokemon != NULL)
 		{
 			pokemon_getTipo(unPokemon, tipo);
+			pokemon_getEsVarioColor(unPokemon,&esVarioColor);
 
-			if(strcmp(tipo,water) == 0)
+			if(strcmp(tipo,water) == 0 && esVarioColor == 1)
 			{
 				retorno = 1;
 			}
@@ -506,3 +510,25 @@ int pokemon_Batalla(LinkedList* pArrayListPokemon)
 
 	return retorno;
 }
+/***************************************************************************************/
+int pokemon_tipoColor(int numero,char* esVarioColor)
+{
+	int retorno = -1;
+
+	if(esVarioColor != NULL && numero >= 0)
+	{
+		switch(numero)
+		{
+		case 0:
+			strcpy(esVarioColor,"Simple");
+		break;
+		case 1:
+			strcpy(esVarioColor,"MultiColor");
+		break;
+		}
+		retorno = 0;
+	}
+
+	return retorno;
+}
+/***************************************************************************************/

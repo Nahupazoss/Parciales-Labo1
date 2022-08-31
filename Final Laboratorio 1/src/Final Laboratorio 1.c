@@ -40,6 +40,7 @@ int main(void)
 			controller_loadFromText(auxArchivo, listPokemon);
 		break;
 		case 2:
+			controller_List(listPokemon);
 			pokemon_eliminar(listPokemon);
 		break;
 		case 3:

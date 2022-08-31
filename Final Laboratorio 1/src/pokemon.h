@@ -68,6 +68,6 @@ int pokemon_batallaFire(void* pElemetno);
 /***********************************************/
 int pokemon_Batalla(LinkedList* pArrayListPokemon);
 /************************************************/
-
+int pokemon_tipoColor(int numero,char* esVarioColor);
 
 #endif /* POKEMON_H_ */
